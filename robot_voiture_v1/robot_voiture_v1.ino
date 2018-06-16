@@ -26,11 +26,11 @@ void setup(){
 
 void loop(){
   distActuelle = lectureDistance();
-  if(distActuelle > 20){
+  if(distActuelle > 40){
     avance(); 
   }
 
-  if (distActuelle < 20){
+  if (distActuelle < 40){
     recule();
     tourneDroite(); 
   }
@@ -51,13 +51,15 @@ void dirMoteur(int moteur, int sens, int pc){
     pinP=pinPMoteur2;
   }
 
-  if (sens == -1)
-  {
+  if (sens == 1){
     etat1 = 1 ; 
     etat2 = 0 ;
+  }else if(sens == -1){
+  	etat1 = 0; 
+  	etat2 = 1; 
   }else{
     etat1 = 0 ; 
-    etat2 = 1 ; 
+    etat2 = 0 ; 
   }
 
   puissance=map(pc, 0, 100, 0, 255);
@@ -68,8 +70,8 @@ void dirMoteur(int moteur, int sens, int pc){
 
 
 void avance(){
-  dirMoteur(1,1,100);
-  dirMoteur(2,1,100); 
+  dirMoteur(1,1,50);
+  dirMoteur(2,1,50); 
 }
 
 void recule(){
