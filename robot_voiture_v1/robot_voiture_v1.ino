@@ -51,7 +51,7 @@ void dirMoteur(int moteur, int sens, int pc){
     pinP=pinPMoteur2;
   }
 
-  if (sens == 1)
+  if (sens == -1)
   {
     etat1 = 1 ; 
     etat2 = 0 ;
