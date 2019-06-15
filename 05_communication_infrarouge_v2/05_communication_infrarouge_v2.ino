@@ -20,6 +20,7 @@ void dump(decode_results*results){
   Serial.print(count,DEC);
   Serial.println("):");
 
+  // permet de recuperer le tableau des codes
   for (int i = 0 ; i < count;i++){
     Serial.print(i);
     if ((i % 2) == 1) {
